@@ -10,9 +10,10 @@ import org.hibernate.cfg.Configuration;
 public class HibernateUtil {
 
     static {
-        Configuration configuration = new Configuration();
-        Configuration configure = configuration.configure();
-        sessionFactory = configure.buildSessionFactory();
+//        Configuration configuration = new Configuration();
+//        Configuration configure = configuration.configure();
+//        sessionFactory = configure.buildSessionFactory();
+        sessionFactory = new Configuration().configure().buildSessionFactory();
     }
 
     private static SessionFactory sessionFactory;

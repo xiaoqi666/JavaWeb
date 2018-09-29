@@ -1,3 +1,5 @@
+package com.xiaoqi.test;
+
 import com.xiaoqi.domain.CustomerEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -5,7 +7,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.testng.annotations.Test;
 
-public class Main {
+public class Main_rumen {
 
     @Test
     public void test() {

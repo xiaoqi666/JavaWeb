@@ -3,6 +3,44 @@ package com.xiaoqi.domain;
 import javax.persistence.*;
 import java.util.Objects;
 
+
+/*
+
+创建数据库的信息
+
+CREATE DATABASE xiaoqi;
+
+USE xiaoqi;
+
+SELECT *
+FROM customer;
+
+CREATE TABLE `customer` (
+  `cust_id`       BIGINT(32)  NOT NULL AUTO_INCREMENT
+  COMMENT '客户编号(主键)',
+  `cust_name`     VARCHAR(32) NOT NULL
+  COMMENT '客户名称(公司名称)',
+  `cust_source`   VARCHAR(32)          DEFAULT NULL
+  COMMENT '客户信息来源',
+  `cust_industry` VARCHAR(32)          DEFAULT NULL
+  COMMENT '客户所属行业',
+  `cust_level`    VARCHAR(32)          DEFAULT NULL
+  COMMENT '客户级别',
+  `cust_linkman`  VARCHAR(64)          DEFAULT NULL
+  COMMENT '联系人',
+  `cust_phone`    VARCHAR(64)          DEFAULT NULL
+  COMMENT '固定电话',
+  `cust_mobile`   VARCHAR(16)          DEFAULT NULL
+  COMMENT '移动电话',
+  PRIMARY KEY (`cust_id`)
+)
+  ENGINE = INNODB
+  AUTO_INCREMENT = 1
+  DEFAULT CHARSET = utf8;
+
+
+
+ */
 @Entity
 @Table(name = "customer", schema = "xiaoqi")
 public class CustomerEntity {
@@ -108,6 +146,21 @@ public class CustomerEntity {
                 Objects.equals(custLinkman, that.custLinkman) &&
                 Objects.equals(custPhone, that.custPhone) &&
                 Objects.equals(custMobile, that.custMobile);
+    }
+
+
+    @Override
+    public String toString() {
+        return "CustomerEntity{" +
+                "custId=" + custId +
+                ", custName='" + custName + '\'' +
+                ", custSource='" + custSource + '\'' +
+                ", custIndustry='" + custIndustry + '\'' +
+                ", custLevel='" + custLevel + '\'' +
+                ", custLinkman='" + custLinkman + '\'' +
+                ", custPhone='" + custPhone + '\'' +
+                ", custMobile='" + custMobile + '\'' +
+                '}';
     }
 
     @Override

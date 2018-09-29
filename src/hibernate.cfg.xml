@@ -4,7 +4,8 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:mysql://localhost:3306</property>
+        <!-- 此处的数据库名称在使用原生sql语句的时候要加上  -->
+        <property name="connection.url">jdbc:mysql://localhost:3306/xiaoqi</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.username">root</property>
         <property name="connection.password">123456</property>
@@ -22,7 +23,8 @@
         注意: MYSQL在选择方言时,请选择最短的方言.
      -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-
+        <!-- 高版本使用此数据库方言 -->
+        <!--<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>-->
         <!--
 		## auto schema export  自动导出表结构. 自动建表
 		#hibernate.hbm2ddl.auto create		自动建表.每次框架运行都会创建新的表.以前表将会被覆盖,表数据会丢失.(开发环境中测试使用)
